@@ -1,0 +1,19 @@
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/app.db
+backend/.env
+backend/uploads/
+backend/alembic.ini
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local

@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-700;
+  }
+
+  body {
+    @apply bg-surface-900 text-gray-100 font-sans antialiased;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-surface-800/50 backdrop-blur-xl border border-surface-700/50 rounded-2xl;
+  }
+
+  /* Premium button styles */
+  .btn-primary {
+    @apply px-6 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-medium rounded-xl
+           hover:from-primary-500 hover:to-primary-400 active:scale-[0.98]
+           transition-all duration-200 shadow-lg shadow-primary-600/25;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-surface-700/50 text-gray-200 font-medium rounded-xl border border-surface-700
+           hover:bg-surface-700 hover:border-primary-500/30 active:scale-[0.98]
+           transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply px-6 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-xl
+           hover:from-red-500 hover:to-red-400 active:scale-[0.98]
+           transition-all duration-200 shadow-lg shadow-red-600/25;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply w-full px-4 py-3 bg-surface-800/80 border border-surface-700 rounded-xl text-gray-100
+           placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
+           transition-all duration-200;
+  }
+
+  /* Textarea for Devanagari text */
+  .textarea-devanagari {
+    @apply w-full px-4 py-3 bg-surface-800/80 border border-surface-700 rounded-xl text-gray-100
+           font-hindi text-lg leading-relaxed
+           placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
+           transition-all duration-200 resize-y min-h-[200px];
+  }
+
+  /* Status badge */
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .badge-error {
+    @apply badge bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .badge-info {
+    @apply badge bg-cyan-500/20 text-cyan-400 border border-cyan-500/30;
+  }
+
+  .badge-neutral {
+    @apply badge bg-gray-500/20 text-gray-400 border border-gray-500/30;
+  }
+
+  /* Page container */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent;
+  }
+
+  /* Glow effect */
+  .glow {
+    @apply relative;
+  }
+  
+  .glow::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-primary-600 to-cyan-500 rounded-2xl opacity-20 blur-xl;
+  }
+}
+
+/* Highlight search results */
+mark {
+  @apply bg-amber-500/30 text-amber-200 px-0.5 rounded;
+}
+
+/* Devanagari text display */
+.devanagari-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply inline-block w-6 h-6 border-2 border-primary-400 border-t-transparent rounded-full;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Confidence score gradient */
+.confidence-bar {
+  @apply h-2 rounded-full;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+}
